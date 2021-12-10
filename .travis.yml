@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  version: 12.22.6
+
+script:
+  - "npm run build"
+  - "npm run test:nowatch"
+
+deploy:
+  provider: heroku
+  api_key: $HEROKU_TOKEN
+  app: "brunos-bookstore-client"
